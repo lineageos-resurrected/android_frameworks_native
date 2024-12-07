@@ -41,7 +41,7 @@ ANDROID_SINGLETON_STATIC_INSTANCE(SensorManager)
 SensorManager::SensorManager()
     : mSensorList(0)
 {
-    Mutex::Autolock _l(mLock);
+    // okay we're not locked here, but it's not needed during construction
     assertStateLocked();
 }
 
